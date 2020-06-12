@@ -5,11 +5,11 @@
     </a>
   </nav>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">My Site</a>   
+    <a class="navbar-brand" href="{% url 'account:dashboard'%}">Home</a>   
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="{% url 'account:dashboard'%}">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link active" href="{% url 'blog:post_list' %}">Blog</a>
+        <a class="nav-item nav-link active" href="{% url 'blog:post_list'%}">Blog <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="{% url 'references:references_list'%}">Reference</a>
       </div>
     </div>
   </nav> 

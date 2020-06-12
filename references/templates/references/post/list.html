@@ -1,0 +1,37 @@
+{% extends 'references/base.html' %}
+{% load references_tags %}
+
+{% block title %}
+    My Reference
+{% endblock title %}
+
+{% block content %}
+    <h1>My Reference</h1>
+        
+    {% for views in view %}
+        <h2>
+            <a href="#">
+                {{ views.title }}
+            </a>
+        </h2>
+
+        <p class="date">
+            Created {{ views.created }} by  {{ views.author }}
+        </p>
+        
+        {{ views.description|markdown|truncatewords_html:30 }}
+        
+        <p>
+            <a href="{{ views.link }}">{{ views.link }}</a>
+        </p>
+
+        {% if views.author == request.user %} <!--hanya bisa update delete post milik user yg login-->
+        <p>
+            <a href="{% url 'references:references_update' views.id views.slug %}">Update Reference</a> |
+            <a href="{% url 'references:references_delete' views.id views.slug %}">Delete Reference</a>
+        </p>
+        {% endif %}
+    {% endfor %}
+
+    {% include "pagination.html" with page=page_obj %}
+{% endblock content %}

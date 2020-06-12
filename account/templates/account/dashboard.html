@@ -3,5 +3,8 @@
 
 {% block content %}
     <h1>Dashboard</h1>
-    <p>Sugeng Rawuh</p>
+    <p>Sugeng Rawuh {{ request.user }}</p>
+    
+    <img src="{{ request.user.profile.photo.url }}" alt="" height="400px">
+    
 {% endblock content%}
