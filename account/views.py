@@ -13,19 +13,20 @@ from .models import Profile
 
 # Create your views here.
 
-@login_required
-def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section':'dashboard'})
+# @login_required
+# def dashboard(request):
+#     return render(request, 'account/dashboard.html', {'section':'dashboard'})
 
 class UserRegistrationView(CreateView):
     template_name = 'account/user_form.html'
     form_class = MyUserCreationForm
 
     def form_valid (self, form):
-        self.username = form.instance.username #get user name doang
+        #get user name doang
+        self.username = form.instance.username 
         return super().form_valid(form) 
 
-    def get_success_url(self): #
+    def get_success_url(self): 
         user_model = get_user_model()
         user = user_model.objects.get(username=self.username)
         login(self.request, user)
