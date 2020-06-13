@@ -15,7 +15,7 @@ from .models import Profile
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section': dashboard})
+    return render(request, 'account/dashboard.html', {'section':'dashboard'})
 
 class UserRegistrationView(CreateView):
     template_name = 'account/user_form.html'
