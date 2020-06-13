@@ -6,6 +6,7 @@ from django.utils.text import slugify
 
 class ReferencesListView(generics.ListCreateAPIView):
     queryset = References.objects.all()
+    # print(queryset)
     serializer_class = ReferencesSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
@@ -15,6 +16,7 @@ class ReferencesListView(generics.ListCreateAPIView):
 
 class ReferencesDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = References.objects.all()
+    # print(queryset)
     serializer_class = ReferencesSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsAuthorOrReadonly]
 

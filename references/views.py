@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import References
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
-#from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, FormView, CreateView, UpdateView, DeleteView
