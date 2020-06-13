@@ -4,18 +4,14 @@ from django.views.generic import CreateView, View
 from .forms import MyUserCreationForm, ProfileUpdateForm, UserUpdateForm
 from django.urls import reverse_lazy
 from django.contrib.auth import login, get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Profile
-
-
-
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
-# @login_required
-# def dashboard(request):
-#     return render(request, 'account/dashboard.html', {'section':'dashboard'})
+@login_required
+def dashboard(request):
+    return render(request, 'account/dashboard.html', {'section':'dashboard'})
 
 class UserRegistrationView(CreateView):
     template_name = 'account/user_form.html'
