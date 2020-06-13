@@ -27,7 +27,7 @@ sitemaps = {
 
 
 urlpatterns = [
-    path('', include('blog.urls')),
+    #path('', include('account.urls')),
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('references/', include('references.urls')),
@@ -36,7 +36,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('api/', include('blog.api.urls', namespace='api')),
     path('api_auth/', include('rest_framework.urls')),
-    path('referencesApi/', include('references.api.urls', namespace='api')),
+    path('referencesApi/', include('references.api.urls', namespace='api_references')),
 ]
 
 if settings.DEBUG:
