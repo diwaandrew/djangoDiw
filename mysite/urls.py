@@ -27,7 +27,7 @@ sitemaps = {
 
 #iki
 urlpatterns = [
-    path('', include('account.urls')),
+    #path('', include('account.urls',namespace='accounts')),
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('references/', include('references.urls')),
